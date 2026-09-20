@@ -589,3 +589,52 @@ p  { margin: 0 0 1.1em; }
   html { scroll-behavior: auto; }
   * { transition: none !important; }
 }
+
+/* --- MenÃº: 6 entradas caben mÃ¡s justas en tablet --- */
+@media (min-width: 861px) and (max-width: 1100px) {
+  .nav { gap: 22px; }
+  .nav a { font-size: .97rem; }
+  .brand img { width: 168px; }
+}
+
+/* ---------- 19. PÃ¡gina de contenido ---------- */
+.page-hero .hero__cta { margin-top: 30px; }
+
+.media-block + .media-block { margin-top: 96px; }
+.media-block__head { max-width: 780px; margin: 0 auto 44px; text-align: center; }
+.media-block__head h3 { font-size: clamp(1.4rem, 2.6vw, 2rem); margin-bottom: .55em; }
+.media-block__head p { margin-bottom: 0; }
+
+.media-grid { display: grid; gap: 28px; margin-inline: auto; }
+.media-grid--reels  { grid-template-columns: repeat(2, 1fr); max-width: 560px; }
+.media-grid--wide   { grid-template-columns: repeat(2, 1fr); max-width: 1060px; }
+.media-grid--photos { grid-template-columns: repeat(4, 1fr); max-width: 1120px; }
+
+.media-grid video,
+.media-grid img {
+  width: 100%;
+  display: block;
+  border-radius: var(--radius);
+  background: #cfc3b9;
+}
+.media-grid--reels video  { aspect-ratio: 9 / 16;  object-fit: cover; }
+.media-grid--wide video   { aspect-ratio: 16 / 9;  object-fit: cover; }
+.media-grid--photos img   { aspect-ratio: 4 / 3;   object-fit: cover; }
+
+.media-note {
+  text-align: center;
+  font-size: .95rem;
+  color: var(--muted);
+  margin: 26px 0 0;
+}
+
+@media (max-width: 860px) {
+  .media-block + .media-block { margin-top: 64px; }
+  .media-grid { gap: 18px; }
+  .media-grid--wide { grid-template-columns: 1fr; max-width: 560px; }
+  .media-grid--photos { grid-template-columns: repeat(2, 1fr); max-width: 560px; }
+}
+
+@media (max-width: 560px) {
+  .media-grid--reels { max-width: 420px; }
+}
